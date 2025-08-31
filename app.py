@@ -31,9 +31,9 @@ if prompt := st.chat_input("How are you feeling today?"):
             with requests.post(
                 "http://localhost:11434/api/generate",
                 json={
-                    "model": "deepseek-r1",
-                    "prompt": f"Be empathetic and supportive. User says: {prompt}",
-                    "stream": True,
+                    "model": "deepseek-r1:1.5b",
+                    "prompt": f"Be empathetic and supportive. Only provide the final supportive answer without any internal thoughts or explanations. User says: {prompt}",
+                      "stream": True,
                 },
                 stream=True,
             ) as r:
